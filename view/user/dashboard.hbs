@@ -1,0 +1,536 @@
+<main class="main-wrap">
+    {{!-- <header class="main-header navbar">
+        <div class="col-search">
+            <form class="searchform">
+                <div class="input-group">
+                    <input list="search_terms" type="text" class="form-control" placeholder="Search term">
+                    <button class="btn btn-light bg" type="button"> <i class="material-icons md-search"></i></button>
+                </div>
+                <datalist id="search_terms">
+                    <option value="Products">
+                    <option value="New orders">
+                    <option value="Apple iphone">
+                    <option value="Ahmed Hassan">
+                </datalist>
+            </form>
+        </div>
+        <div class="col-nav">
+            <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i
+                    class="material-icons md-apps"></i> </button>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link btn-icon" href="#">
+                        <i class="material-icons md-notifications animation-shake"></i>
+                        <span class="badge rounded-pill">3</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-icon darkmode" href="#"> <i class="material-icons md-nights_stay"></i> </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="requestfullscreen nav-link btn-icon"><i class="material-icons md-cast"></i></a>
+                </li>
+                <li class="dropdown nav-item">
+                    <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownLanguage"
+                        aria-expanded="false"><i class="material-icons md-public"></i></a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownLanguage">
+                        <a class="dropdown-item text-brand" href="#"><img src="assets/imgs/theme/flag-us.png"
+                                alt="English">English</a>
+                        <a class="dropdown-item" href="#"><img src="assets/imgs/theme/flag-fr.png"
+                                alt="Français">Français</a>
+                        <a class="dropdown-item" href="#"><img src="assets/imgs/theme/flag-jp.png"
+                                alt="Français">日本語</a>
+                        <a class="dropdown-item" href="#"><img src="assets/imgs/theme/flag-cn.png"
+                                alt="Français">中国人</a>
+                    </div>
+                </li>
+                <li class="dropdown nav-item">
+                    <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownAccount"
+                        aria-expanded="false"> <img class="img-xs rounded-circle" src="assets/imgs/people/avatar2.jpg"
+                            alt="User"></a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownAccount">
+                        <a class="dropdown-item" href="#"><i class="material-icons md-perm_identity"></i>Edit
+                            Profile</a>
+                        <a class="dropdown-item" href="#"><i class="material-icons md-settings"></i>Account Settings</a>
+                        <a class="dropdown-item" href="#"><i
+                                class="material-icons md-account_balance_wallet"></i>Wallet</a>
+                        <a class="dropdown-item" href="#"><i class="material-icons md-receipt"></i>Billing</a>
+                        <a class="dropdown-item" href="#"><i class="material-icons md-help_outline"></i>Help center</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-danger" href="#"><i
+                                class="material-icons md-exit_to_app"></i>Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header> --}}
+    <section class="content-main">
+        <div class="content-header">
+            <a href="javascript:history.back()"><i class="material-icons md-arrow_back"></i> Go back </a>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header bg-primary" style="height:150px">
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xl col-lg flex-grow-0" style="flex-basis:230px">
+                        <div class="img-thumbnail shadow w-100 bg-white position-relative text-center"
+                            style="height:190px; width:200px; margin-top:-120px">
+                            <img src="assets/emoloyeeImages/{{employeeDetails.image}}" class="center-xy img-fluid"
+                                alt="Image not found" style="max-width: 100%; max-height: 100%; object-fit: cover;">
+                        </div>
+                    </div> <!--  col.// -->
+                    <div class="col-xl col-lg">
+                        <h3>{{employeeDetails.name}}</h3>
+                        <p>{{employeeDetails.desi}}</p>
+                    </div> <!--  col.// -->
+                    <div class="col-xl-4 text-md-end">
+                        {{!-- <select class="form-select w-auto d-inline-block">
+                            <option>Actions</option>
+                            <option>Disable shop</option>
+                            <option>Analyze</option>
+                            <option>Something</option>
+                        </select> --}}
+                        <button onclick="pdf()" class="btn btn-primary"> Download Salary Slip <i
+                                class="material-icons md-cloud_download"></i> </a>
+                    </div> <!--  col.// -->
+                </div> <!-- card-body.// -->
+                <hr class="my-4">
+                <div class="row g-4">
+                    <div class="col-md-12 col-lg-4 col-xl-2">
+                        <article class="box">
+                            <p class="mb-0 text-muted">Salary:</p>
+                            <h5 class="text-success">{{employeeDetails.salary}}</h5>
+
+                        </article>
+                    </div> <!--  col.// -->
+                    <div class="col-sm-6 col-lg-4 col-xl-3">
+                        <h6>Contacts</h6>
+
+                        <p>
+                            Designation:<br>
+                            <template class="__cf_email__"
+                                data-cfemail="31585f575e715449505c415d541f525e5c">[email&#160;protected]</template> <br>
+                            Phone number:{{employeeDetails.mobile}}
+                        </p>
+                    </div> <!--  col.// -->
+                    <div class="col-sm-6 col-lg-4 col-xl-3">
+                        <h6>Address</h6>
+                        <p>
+                            Country: {{employeeDetails.country}} <br>
+                            Address: {{employeeDetails.address}} <br>
+                            Postal code: {{employeeDetails.pin}}
+                        </p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 col-xl-3">
+                        <h6>Bank Details</h6>
+                        <p>
+                            Account No: {{employeeDetails.acc}} <br>
+                            IFSC: {{employeeDetails.ifsc}} <br>
+                            Bank : {{employeeDetails.bank}}
+                        </p>
+                    </div> <!--  col.// -->
+                    {{!-- <div class="col-sm-6 col-xl-4 text-xl-end">
+                        <map class="mapbox position-relative d-inline-block">
+                            <img src="assets/imgs/misc/map.jpg" class="rounded2" height="120" alt="map">
+                            <span class="map-pin" style="top:50px; left: 100px"></span>
+                            <button class="btn btn-sm btn-brand position-absolute bottom-0 end-0 mb-15 mr-15 font-xs">
+                                Large </button>
+                        </map>
+                    </div> <!--  col.// --> --}}
+                </div> <!--  row.// -->
+            </div> <!--  card-body.// -->
+        </div> <!--  card.// -->
+        {{!-- <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Products by seller</h5>
+                <div class="row">
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/1.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Product name</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/2.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Product name</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/3.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Jeans short new model</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/4.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Travel Bag XL</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/5.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Product name</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/6.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Product name</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/7.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Product name</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/8.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Apple Airpods CB-133</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/9.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Product name</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/10.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Product name</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/11.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Jeans short new model</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/12.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Travel Bag XL</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/1.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Product name</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/2.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Product name</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/3.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Jeans short new model</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/4.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Travel Bag XL</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/5.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Product name</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/6.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Product name</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/7.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Product name</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/8.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Apple Airpods CB-133</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/9.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Product name</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/10.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Product name</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/11.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Jeans short new model</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                    <div class="col-xl-2 col-lg-3 col-md-6">
+                        <div class="card card-product-grid">
+                            <a href="#" class="img-wrap"> <img src="assets/imgs/items/12.jpg" alt="Product"> </a>
+                            <div class="info-wrap">
+                                <a href="#" class="title">Travel Bag XL</a>
+                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                            </div>
+                        </div> <!-- card-product  end// -->
+                    </div> <!-- col.// -->
+                </div> <!-- row.// -->
+            </div> <!--  card-body.// -->
+        </div> <!--  card.// -->
+        <div class="pagination-area mt-30 mb-50">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-start">
+                    <li class="page-item active"><a class="page-link" href="#">01</a></li>
+                    <li class="page-item"><a class="page-link" href="#">02</a></li>
+                    <li class="page-item"><a class="page-link" href="#">03</a></li>
+                    <li class="page-item"><a class="page-link dot" href="#">...</a></li>
+                    <li class="page-item"><a class="page-link" href="#">16</a></li>
+                    <li class="page-item"><a class="page-link" href="#"><i
+                                class="material-icons md-chevron_right"></i></a></li>
+                </ul>
+            </nav>
+        </div> --}}
+    </section> <!-- content-main end// -->
+    <section class="content-main">
+        <div class="content-header">
+            <div>
+                <h2 class="content-title card-title">Salary List </h2>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <header class="card-header">
+                <div class="row gx-3">
+                </div>
+            </header> <!-- card-header end// -->
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="salaryTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">Month</th>
+                                <th scope="col">Basic</th>
+                                <th scope="col">Incentive</th>
+                                <th scope="col">Deduction</th>
+                                <th scope="col">Social Security</th>
+                                <th scope="col">Health Insurance</th>
+                                <th scope="col">Total Deduction</th>
+                                <th scope="col">Total</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <span>
+                            <input type="hidden" id="employeeName" value="{{employeeDetails.name}}">
+                            <input type="hidden" id="employeeDesignation" value="{{employeeDetails.desi}}">
+                            <input type="hidden" id="employeeAddress" value="{{employeeDetails.address}}">
+                        </span>
+                        <tbody>
+                            {{#each salData}}
+                            <tr data-row-index="{{@index}}">
+                                <td><b>{{month}}</b></td>
+                                <td class="salary-td">${{salary}}</td>
+                                <td class="deduction-td">{{Incentive}}</td>
+                                <td class="incentive-td">{{deduction}}</td>
+                                <td class="incentive-td">{{socialSecurity}}</td>
+                                <td class="incentive-td">{{healthInsurance}}</td>
+                                <td class="incentive-td">{{sum deduction socialSecurity healthInsurance}}</td>
+                                <td id="sum-td">{{totalSal salary Incentive deduction socialSecurity healthInsurance}}
+                                </td>
+                                <td><button class="btn btn-primary"
+                                        onclick="downloadRowData({{@index}})">Download</button></td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+
+                </div> <!-- table-responsive //end -->
+            </div> <!-- card-body end// -->
+        </div> <!-- card end// -->
+    </section>
+    <footer class="main-footer font-xs">
+        <div class="row pb-30 pt-15">
+            <div class="col-sm-6">
+                <script data-cfasync="false"
+                    src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>
+            </div>
+            <div class="col-sm-6">
+                <div class="text-sm-end">
+                    All rights reserved
+                </div>
+            </div>
+        </div>
+    </footer>
+</main>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
+
+
+
+<!-- SheetJS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Include jsPDF library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.min.js"></script>
+
+<script>
+  function generateSalaryPDF(name, designation, address, month, salary, incentive, deduction, socialSecurity, healthInsurance, totalDeduction, totalSalary) {
+    var doc = new jsPDF();
+    doc.setFontSize(12);
+
+    doc.text("Name: " + name, 10, 10);
+    doc.text("Designation: " + designation, 10, 20);
+    doc.text("Address: " + address, 10, 30);
+
+    var tableData = [
+      ["Month:", month],
+      ["Salary:",  salary],
+      ["Incentive:", incentive],
+      ["Deduction:", deduction],
+      ["Social Security:", socialSecurity],
+      ["Health Insurance:", healthInsurance],
+      ["Total Deduction:", totalDeduction],
+      ["Total Salary:", totalSalary]
+    ];
+
+    doc.autoTable({
+      body: tableData,
+      theme: "grid",
+      startY: 40, // Adjust startY to create space after the text content before the table
+      showHeader: false,
+      styles: { fontSize: 12 },
+      columnStyles: {
+        0: { fontStyle: "bold" },
+      },
+    });
+
+    return doc; // Return the generated PDF object
+  }
+
+  function downloadRowData(rowIndex) {
+    // Get the row element based on the rowIndex
+    var row = document.querySelector(`[data-row-index="${rowIndex}"]`);
+
+    // Get the text content of each cell in the row
+    var name = document.getElementById('employeeName').value;
+    var designation = document.getElementById('employeeDesignation').value;
+    var address = document.getElementById('employeeAddress').value;
+    var month = row.querySelector('td:nth-child(1)').textContent;
+    var salary = row.querySelector('td:nth-child(2)').textContent;
+    var incentive = row.querySelector('td:nth-child(3)').textContent;
+    var deduction = row.querySelector('td:nth-child(4)').textContent;
+    var socialSecurity = row.querySelector('td:nth-child(5)').textContent;
+    var healthInsurance = row.querySelector('td:nth-child(6)').textContent;
+    var totalDeduction = row.querySelector('td:nth-child(7)').textContent;
+    var totalSalary = row.querySelector('td:nth-child(8)').textContent;
+
+    // Generate the PDF
+    var generatedPDF = generateSalaryPDF(
+      name, designation, address, month, salary, incentive, deduction,
+      socialSecurity, healthInsurance, totalDeduction, totalSalary
+    );
+
+    // Save the PDF with an appropriate file name
+    generatedPDF.save('Salary_' + month + '.pdf');
+  }
+</script>

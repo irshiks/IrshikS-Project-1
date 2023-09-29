@@ -1,0 +1,53 @@
+  <main class="main-wrap">
+      
+         <section class="content-main">
+            <div class="content-header">
+                <h2 class="content-title">Employees</h2>
+                <div>
+                    <a href="/admin/addEmploye" class="btn btn-primary"><i class="material-icons md-plus"></i> Create new</a>
+                </div>
+            </div>
+            <div class="card mb-4">
+           
+                <div class="card-body">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
+                        {{#each employeeDetails}}
+                        <div class="col">
+                            <div class="card card-user">
+                                <div class="card-header">
+                                    <img class="img-md img-avatar" src="assets/emoloyeeImages/{{image}}" alt="User pic">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title mt-50">{{name}}</h5>
+                                    <div class="card-text text-muted">
+                                        <p class="m-0">Employee ID: #{{_id}}</p>
+                                        <p><template class="__cf_email__" data-cfemail="cea3afbcb7f7fe8eabb6afa3bea2abe0ada1a3">[email&#160;protected]</template></p>
+                                        <a href="/admin/employeeProfile?id={{_id}}" class="btn btn-sm btn-brand rounded font-sm mt-15">View details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- col.// -->
+                        {{/each}}
+                        
+                    </div> <!-- row.// -->
+                </div> <!-- card-body end// -->
+            </div> <!-- card end// -->
+           
+        </section> <!-- content-main end// -->
+        <footer class="main-footer font-xs">
+            <div class="row pb-30 pt-15">
+                <div class="col-sm-6">
+                    <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+                    document.write(new Date().getFullYear())
+                    </script> ©, .
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end">
+                        All rights reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+

@@ -1,0 +1,95 @@
+<main class="main-wrap">
+        <header class="main-header navbar">
+           
+           
+        </header>
+        <section class="content-main">
+            <div class="row">
+                <div class="col-9">
+                    <div class="content-header">
+                        <h2 class="content-title">Add Salary</h2>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4>Basic</h4>
+                        </div>
+                        <div class="card-body">
+                            <form action="" method="post">
+                                <input type="hidden" value="{{id}}" name="id">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="mb-4">
+                                            <label class="form-label"> Basic </label>
+                                            <div class="row gx-2">
+                                                <input placeholder="$" type="text" class="form-control" name="salary" value="{{salary}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="mb-4">
+                                            <label class="form-label"> Incentive </label>
+                                            <input placeholder="$" type="text" class="form-control" name="Incentive">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="mb-4">
+                                            <label class="form-label"> Deduction </label>
+                                            <input placeholder="$" type="text" class="form-control" name="deduction">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="mb-4">
+                                            <label class="form-label"> Social Security </label>
+                                            <input placeholder="$" type="text" class="form-control" name="socialSecurity">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="mb-4">
+                                            <label class="form-label"> Health Insurance </label>
+                                            <input placeholder="$" type="text" class="form-control" name="healthInsurance">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Month</label>
+                                    <select class="form-select" name="month">
+                                            <option> January </option>
+                                            <option> February </option>
+                                            <option> March </option>
+                                            <option> April </option>
+                                            <option> May </option>
+                                            <option> June </option>
+                                            <option> July </option>
+                                            <option> August </option>
+                                            <option> September </option>
+                                            <option> October </option>
+                                            <option> November </option>
+                                            <option> December </option>
+                                    </select>
+                                </div>
+                                <div class="card-text text-muted">
+                                    <button class="btn btn-sm btn-brand rounded font-sm mt-15">Add Salary</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div> <!-- card end// -->
+                </div>
+            </div>
+        </section> <!-- content-main end// -->
+        <footer class="main-footer font-xs">
+            <div class="row pb-30 pt-15">
+                <div class="col-sm-6">
+                    <script>
+                    document.write(new Date().getFullYear())
+                    </script> ©, Evara - HTML Ecommerce Template .
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end">
+                        All rights reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
